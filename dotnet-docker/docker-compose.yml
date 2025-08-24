@@ -1,0 +1,38 @@
+services: 
+
+    frontend:
+        image: store:latest
+        environment: 
+            - ProductEndpoint=http://backend:8080
+        ports:
+            - "32000:8080"
+        depends_on: 
+            - backend
+    backend:
+        image: products:latest
+        ports: 
+            - "32001:8080"
+
+
+
+# To build images from Dockerfiles, uncomment the following and comment out the above section
+# services: 
+
+#     frontend:
+#         image: storeimage
+#         build:
+#             context: .
+#             dockerfile: ./Store/Dockerfile
+#         environment: 
+#            - ProductEndpoint=http://backend:8080
+#         ports:
+#            - "32000:8080"
+#         depends_on: 
+#            - backend
+#     backend:
+#         image: productservice
+#         build: 
+#             context: .
+#             dockerfile: ./Products/Dockerfile
+#         ports: 
+#            - "32001:8080"
