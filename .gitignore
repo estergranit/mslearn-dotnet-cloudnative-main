@@ -399,3 +399,8 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 .vscode/settings.json
+
+# Tar archives
+*.tar
+*.tar.gz
+*.tgz
