@@ -10,7 +10,9 @@ services:
       - "32000:8080"
     depends_on: 
       - backend
+    restart: always
   backend:
     image: products:latest
     ports: 
       - "32001:8080"
+    restart: always
